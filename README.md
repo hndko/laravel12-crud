@@ -1,66 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+````markdown
+# Aplikasi Manajemen Data Mahasiswa
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi ini adalah sistem manajemen data mahasiswa yang dibangun menggunakan framework Laravel. Aplikasi ini memungkinkan pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data mahasiswa, seperti menambahkan, mengedit, menghapus, dan melihat daftar mahasiswa.
 
-## About Laravel
+## Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Tambah Data Mahasiswa**: Menambahkan data mahasiswa baru (nama, NIM, email, nomor telepon, alamat).
+-   **Edit Data Mahasiswa**: Memperbarui data mahasiswa yang sudah ada.
+-   **Hapus Data Mahasiswa**: Menghapus data mahasiswa dari sistem.
+-   **Pencarian**: Mencari data mahasiswa berdasarkan nama, NIM, atau email.
+-   **Pagination**: Menampilkan data mahasiswa per halaman dengan navigasi pagination.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Laravel 12**: Framework PHP untuk pengembangan aplikasi web.
+-   **Bootstrap 5**: Framework CSS untuk tampilan antarmuka pengguna.
+-   **MySQL**: Database untuk menyimpan data mahasiswa.
 
-## Learning Laravel
+## Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Berikut adalah langkah-langkah untuk menginstal dan menjalankan proyek ini di lingkungan lokal Anda:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Clone Repository
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Clone repository ini ke direktori lokal Anda:
 
-## Laravel Sponsors
+```bash
+git clone https://github.com/hndko/laravel12-crud.git
+cd laravel12-crud
+```
+````
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Install Dependencies
 
-### Premium Partners
+Jalankan perintah berikut untuk menginstal dependensi Laravel:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+composer install
+```
 
-## Contributing
+### 3. Setup Environment
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Salin file `.env.example` dan ubah namanya menjadi `.env`. Kemudian, konfigurasi file `.env` dengan pengaturan database Anda:
 
-## Code of Conduct
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel12-crud
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Generate Key
 
-## Security Vulnerabilities
+Jalankan perintah berikut untuk menghasilkan application key:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan key:generate
+```
 
-## License
+### 5. Migrasi Database
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Jalankan migrasi untuk membuat tabel di database:
+
+```bash
+php artisan migrate
+```
+
+### 6. Jalankan Aplikasi
+
+Mulai server development Laravel:
+
+```bash
+php artisan serve
+```
+
+Buka browser dan akses `http://localhost:8000` untuk melihat aplikasi.
+
+## Penggunaan
+
+1. **Halaman Utama**:
+
+    - Menampilkan daftar mahasiswa dengan pagination.
+    - Tombol "Tambah Data" untuk menambahkan data mahasiswa baru.
+    - Tombol "Edit" dan "Delete" untuk mengelola data mahasiswa.
+
+2. **Tambah Data Mahasiswa**:
+
+    - Klik tombol "Tambah Data" di halaman utama.
+    - Isi formulir dan klik "Simpan".
+
+3. **Edit Data Mahasiswa**:
+
+    - Klik tombol "Edit" di samping data mahasiswa yang ingin diubah.
+    - Perbarui data dan klik "Simpan".
+
+4. **Hapus Data Mahasiswa**:
+
+    - Klik tombol "Delete" di samping data mahasiswa yang ingin dihapus.
+    - Konfirmasi penghapusan.
+
+5. **Pencarian**:
+    - Gunakan kolom pencarian di halaman utama untuk mencari data mahasiswa berdasarkan nama, NIM, atau email.
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+
+1. Fork repository ini.
+2. Buat branch baru (`git checkout -b fitur-baru`).
+3. Commit perubahan Anda (`git commit -m 'Menambahkan fitur baru'`).
+4. Push ke branch (`git push origin fitur-baru`).
+5. Buat Pull Request.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+Dibuat dengan ❤️ oleh [Handoko].
+
+```
+
+---
+
+### **Cara Menggunakan README.md**
+1. Simpan file di root direktori proyek Anda dengan nama `README.md`.
+2. Sesuaikan konten seperti nama proyek, deskripsi, dan instruksi instalasi sesuai dengan proyek Anda.
+3. Jika proyek Anda di-host di GitHub, file `README.md` akan otomatis ditampilkan di halaman utama repository.
+
+---
+
+### **Catatan**
+- Pastikan untuk mengganti placeholder seperti `hndko/laravel12-crud`, `laravel12-crud`, `root`, dan `(blank)` dengan informasi yang sesuai.
+- Jika Anda menggunakan teknologi tambahan (seperti Livewire, Vue.js, atau Inertia.js), tambahkan ke bagian **Teknologi yang Digunakan**.
+
+Semoga ini membantu! Jika Anda memiliki pertanyaan lebih lanjut, silakan beri tahu saya. 😊
+```
