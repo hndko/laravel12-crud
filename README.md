@@ -1,4 +1,3 @@
-````markdown
 # Aplikasi Manajemen Data Mahasiswa
 
 Aplikasi ini adalah sistem manajemen data mahasiswa yang dibangun menggunakan framework Laravel. Aplikasi ini memungkinkan pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data mahasiswa, seperti menambahkan, mengedit, menghapus, dan melihat daftar mahasiswa.
@@ -29,7 +28,6 @@ Clone repository ini ke direktori lokal Anda:
 git clone https://github.com/hndko/laravel12-crud.git
 cd laravel12-crud
 ```
-````
 
 ### 2. Install Dependencies
 
@@ -121,21 +119,3 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 ---
 
 Dibuat dengan ❤️ oleh [Handoko].
-
-```
-
----
-
-### **Cara Menggunakan README.md**
-1. Simpan file di root direktori proyek Anda dengan nama `README.md`.
-2. Sesuaikan konten seperti nama proyek, deskripsi, dan instruksi instalasi sesuai dengan proyek Anda.
-3. Jika proyek Anda di-host di GitHub, file `README.md` akan otomatis ditampilkan di halaman utama repository.
-
----
-
-### **Catatan**
-- Pastikan untuk mengganti placeholder seperti `hndko/laravel12-crud`, `laravel12-crud`, `root`, dan `(blank)` dengan informasi yang sesuai.
-- Jika Anda menggunakan teknologi tambahan (seperti Livewire, Vue.js, atau Inertia.js), tambahkan ke bagian **Teknologi yang Digunakan**.
-
-Semoga ini membantu! Jika Anda memiliki pertanyaan lebih lanjut, silakan beri tahu saya. 😊
-```
