@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nim', 155);
             $table->string('email', 155);
             $table->string('no_telpon', 30);
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }

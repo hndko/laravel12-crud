@@ -14,12 +14,15 @@ class MahasiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('mahasiswa')->insert([
-            'name' => Str::random(10),
-            'nim' => Str::random(10),
-            'email' => Str::random(10) . '@example.com',
-            'no_telpon' => Str::random(10),
-            'alamat' => Str::random(10),
-        ]);
+        for ($i = 1; $i <= 15; $i++) {
+            # code...
+            DB::table('mahasiswa')->insert([
+                'name' => Str::random(10),
+                'nim' => Str::random(10),
+                'email' => Str::random(10) . '@example.com',
+                'no_telpon' => Str::random(10),
+                'alamat' => Str::random(10),
+            ]);
+        }
     }
 }
